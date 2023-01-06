@@ -4,7 +4,9 @@
   "description": "build react project from scratch",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack server --mode=development",
+    "build": "webpack --mode=production --progres --hide-modules",
+    "prettier:format": "prettier --write"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,9 @@
   },
   "homepage": "https://github.com/vaibhavmande/react-init#readme",
   "devDependencies": {
-    "prettier": "2.8.1"
+    "prettier": "2.8.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
   }
 }
