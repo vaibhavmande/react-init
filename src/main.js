@@ -1,1 +1,1 @@
-console.log('hello');
+const add = (a, b) => a + b;
