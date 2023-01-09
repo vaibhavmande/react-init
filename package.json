@@ -4,8 +4,9 @@
   "description": "build react project from scratch",
   "main": "index.tsx",
   "scripts": {
-    "dev": "webpack server --mode=development",
+    "dev:live": "webpack server --mode=development --env TARGET=development",
     "build": "webpack --mode=production --progress",
+    "build:production": "webpack --mode=production --progress --env TARGET=production",
     "prettier:format": "prettier --write"
   },
   "repository": {

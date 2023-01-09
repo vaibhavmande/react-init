@@ -1,11 +1,12 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const BASE_PATH = path.resolve(__dirname, '');
 const APP_PATH = `${BASE_PATH}/src`;
 const DIST_PATH = `${BASE_PATH}/build`;
 
-module.exports = {
+module.exports = (env) => ({
   entry: `${APP_PATH}/index.tsx`,
   output: {
     path: DIST_PATH,
@@ -32,8 +33,11 @@ module.exports = {
       inject: true,
       template: path.join(APP_PATH, 'index.html'),
     }),
+    new webpack.DefinePlugin({
+      TARGET_ENV: JSON.stringify(env.TARGET),
+    }),
   ],
   resolve: {
     extensions: ['.jsx', '.js', '.tsx', '.ts'],
   },
-};
+});
