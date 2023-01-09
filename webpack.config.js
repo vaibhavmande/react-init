@@ -6,7 +6,7 @@ const APP_PATH = `${BASE_PATH}/src`;
 const DIST_PATH = `${BASE_PATH}/build`;
 
 module.exports = {
-  entry: `${APP_PATH}/index.jsx`,
+  entry: `${APP_PATH}/index.tsx`,
   output: {
     path: DIST_PATH,
     filename: 'bundle.js',
@@ -19,7 +19,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js)?x$/,
+        test: /\.(js|ts)?x$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -34,6 +34,6 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: ['.jsx', '.js'],
+    extensions: ['.jsx', '.js', '.tsx', '.ts'],
   },
 };
