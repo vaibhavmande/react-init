@@ -1,0 +1,7 @@
+input {
+  padding: 1rem;
+  border-width: thin;
+  border-color: gray;
+  border-radius: 0.35rem;
+  min-width: 12rem;
+}

@@ -77,13 +77,25 @@ module.exports = {
 
 `npm install --save-dev @babel/core @babel/preset-env babel-loader`
 
+`npm install --save core-js`
+
 **babel.config.json**
 
 ```json
 {
-  "presets": ["@babel/preset-env"]
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": 3
+      }
+    ]
+  ]
 }
 ```
+
+more in `useBuiltIns` and `corejs` [here](https://babeljs.io/docs/en/babel-preset-env#usebuiltins)
 
 **update webpack.config.js**
 
@@ -111,11 +123,37 @@ module.exports = {
 };
 ```
 
-### 4. Add React
+### 4. Add css support
+
+---
+
+`npm install --save-dev style-loader css-loader`
+
+**update webpack.config.js**
+
+```js
+// ... other config
+{
+  test: /\.(js|ts)x?$/,
+  exclude: /node_modules/,
+  use: {
+    loader: 'babel-loader',
+  },
+},
+{
+  test: /\.css$/i,
+  use: ['style-loader', 'css-loader'],
+},
+// ...other config
+```
+
+### 5. Add React
 
 ---
 
 `npm install react react-dom`
+
+`npm install --save-dev @babel/preset-react`
 
 **update `babel.config.json`**
 
@@ -223,7 +261,7 @@ module.exports = (env) => ({
 });
 ```
 
-### 5. Add typescript
+### 6. Add typescript
 
 ---
 
@@ -249,13 +287,13 @@ module.exports = (env) => ({
 
 rename `index.jsx` and `RootApp.js` to `.tsx` and update entry of `webpack.config.js` accrodingly
 
-**create .browserlistrc**
+**create .browserslistrc**
 
 ```bash
 > 0.2% and not dead
 ```
 
-### 6. Environment variables
+### 7. Environment variables
 
 ---
 
@@ -325,6 +363,6 @@ module.exports = (env) => ({
 declare const TARGET_ENV: 'development' | 'production';
 ```
 
-### 7. setup eslint
+### 8. setup eslint
 
 ---

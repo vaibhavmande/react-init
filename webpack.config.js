@@ -20,11 +20,15 @@ module.exports = (env) => ({
   module: {
     rules: [
       {
-        test: /\.(js|ts)?x$/,
+        test: /\.(js|ts)x?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
         },
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
