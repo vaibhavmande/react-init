@@ -7,7 +7,9 @@
     "dev:live": "webpack server --mode=development --env TARGET=development",
     "build": "webpack --mode=production --progress",
     "build:production": "webpack --mode=production --progress --env TARGET=production",
-    "prettier:format": "prettier --write"
+    "prettier": "prettier 'src/**/*.{ts,tsx}'",
+    "prettier:check": "npm run prettier -- --check",
+    "prettier:format": "npm run prettier -- --write"
   },
   "repository": {
     "type": "git",

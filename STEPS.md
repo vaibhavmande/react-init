@@ -362,7 +362,3 @@ module.exports = (env) => ({
 ```ts
 declare const TARGET_ENV: 'development' | 'production';
 ```
-
-### 8. setup eslint
-
----
