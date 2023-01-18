@@ -371,5 +371,7 @@ Generate config
 
 `npm init @eslint/config`
 
+see [.eslintrc.json](.eslintrc.json)
+
 To disable, common rules between prettier and eslint
 `npm install --save-dev eslint-config-prettier`
