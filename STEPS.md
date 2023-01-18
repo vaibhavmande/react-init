@@ -362,3 +362,14 @@ module.exports = (env) => ({
 ```ts
 declare const TARGET_ENV: 'development' | 'production';
 ```
+
+### 8. Eslint
+
+---
+
+Generate config
+
+`npm init @eslint/config`
+
+To disable, common rules between prettier and eslint
+`npm install --save-dev eslint-config-prettier`
