@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "test-utils": ["src/test-utils/testUtils"]
+    },
     "target": "ESNext",
     "module": "umd",
     "lib": ["ESNext", "DOM"],
@@ -14,7 +18,8 @@
     /* Module Resolution Options*/
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "skipLibCheck": true
   },
   "include": ["src"]
 }
