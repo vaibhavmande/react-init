@@ -1,10 +1,9 @@
 {
   "name": "react-init",
   "version": "1.0.0",
-  "description": "build react project from scratch",
-  "main": "index.tsx",
+  "description": "setup react app from scratch",
   "scripts": {
-    "dev:live": "webpack server --mode=development --env TARGET=development",
+    "dev": "webpack server --mode=development --env TARGET=development",
     "build": "webpack --mode=production --progress",
     "build:production": "webpack --mode=production --progress --env TARGET=production",
     "prettier": "prettier 'src/**/*.{ts,tsx}'",
@@ -12,7 +11,7 @@
     "prettier:format": "npm run prettier -- --write",
     "lint": "eslint src --ext .js,.ts,.tsx,.jsx",
     "test": "jest",
-    "test:watch": "jest -- ---watch"
+    "test:watch": "npm test -- --watch"
   },
   "repository": {
     "type": "git",
