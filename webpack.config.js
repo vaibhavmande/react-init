@@ -46,6 +46,7 @@ module.exports = (env) => ({
   resolve: {
     alias: {
       '@': APP_PATH,
+      '@ui': `${APP_PATH}/components/ui`,
     },
     extensions: ['.jsx', '.js', '.tsx', '.ts'],
   },

@@ -7,6 +7,7 @@ module.exports = {
   moduleNameMapper: {
     '^.+\\.(css|png|jpg)$': '<rootDir>/src/test-utils/mockModules.ts',
     '^@/(.*)$': '<rootDir>/src/$1',
+    '^@ui/(.*)$': '<rootDir>/src/components/ui/$1',
     '^test-utils$': '<rootDir>/src/test-utils/testUtils',
   },
   setupFilesAfterEnv: ['<rootDir>/src/test-utils/setupTests.ts'],
