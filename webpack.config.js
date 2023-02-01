@@ -16,6 +16,8 @@ module.exports = (env) => ({
     static: {
       directory: DIST_PATH,
     },
+    historyApiFallback: true,
+    port: 8080,
   },
   module: {
     rules: [
@@ -42,6 +44,10 @@ module.exports = (env) => ({
     }),
   ],
   resolve: {
+    alias: {
+      '@': APP_PATH,
+      '@ui': `${APP_PATH}/components/ui`,
+    },
     extensions: ['.jsx', '.js', '.tsx', '.ts'],
   },
 });

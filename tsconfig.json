@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@ui/*": ["src/components/ui/*"],
+      "test-utils": ["src/test-utils/testUtils"]
+    },
     "target": "ESNext",
     "module": "umd",
     "lib": ["ESNext", "DOM"],
@@ -14,7 +20,8 @@
     /* Module Resolution Options*/
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "skipLibCheck": true
   },
   "include": ["src"]
 }
