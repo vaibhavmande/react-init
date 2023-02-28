@@ -13,5 +13,6 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>/src/test-utils/setupTests.ts'],
   globals: {
     TARGET_ENV: 'develop',
+    SERVICE_URL: '',
   },
 };

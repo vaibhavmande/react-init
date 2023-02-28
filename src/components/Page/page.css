@@ -1,0 +1,15 @@
+header {
+  padding: 1rem;
+  background-color: aliceblue;
+  text-align: center;
+}
+
+header ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+header div:nth-of-type(1) {
+  grid-column: 1 / span 2;
+}

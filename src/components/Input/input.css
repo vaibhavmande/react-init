@@ -1,0 +1,30 @@
+input {
+  padding: 1rem;
+  border-width: thin;
+  border-color: gray;
+  border-radius: 0.35rem;
+  min-width: 12rem;
+}
+
+.field-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+input ~ .error-message {
+  display: none;
+  font-size: smaller;
+}
+
+input:not(:focus):not(:placeholder-shown):invalid {
+  border-color: red;
+}
+input:not(:focus):not(:placeholder-shown):invalid ~ .error-message {
+  display: block;
+}
+input:not(:focus):not(:placeholder-shown):valid {
+  border-color: gray;
+}
+

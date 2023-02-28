@@ -1,12 +1,17 @@
 import React from 'react';
-import Input from '@ui/Input/Input';
+
+import { useAuth } from '@/auth/AuthContext';
+import './app.css';
+
+const AuthenticatedApp = React.lazy(() => import('@/root-app/AuthenticatedApp'));
+const UnauthenticatedApp = React.lazy(() => import('@/root-app/UnauthenticatedApp'));
 
 export default function RootApp() {
+  const { userInfo } = useAuth();
+
   return (
-    <main>
-      <h2>React Init</h2>
-      <p>MODE={TARGET_ENV}</p>
-      <Input type="text" label="Enter name" isValid />
-    </main>
+    <React.Suspense fallback={<p>Loading....</p>}>
+      {userInfo ? <AuthenticatedApp /> : <UnauthenticatedApp />}
+    </React.Suspense>
   );
 }
