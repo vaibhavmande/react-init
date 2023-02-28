@@ -11,6 +11,7 @@ function AuthenticatedAppRoutes() {
       <Route path="/" element={<HomePage />} />
       <Route path="/home" element={<HomePage />} />
       <Route path="/profile" element={<ProfilePage />} />
+      <Route path="/logout" element={<p>Logout page</p>} />
       <Route path="*" element={<p>Page not found</p>} />
     </Routes>
   );
