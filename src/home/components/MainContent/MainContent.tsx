@@ -11,10 +11,10 @@ function MainContent() {
     return <p>Not Authenticated</p>;
   }
 
-  const { userDetails } = userInfo;
+  const { username } = userInfo;
   return (
     <>
-      <p>Welcome, {userDetails}</p>
+      <p>Welcome, {username}</p>
       <AppInfoCard />
       <UserInfoCard userInfo={userInfo} />
     </>
