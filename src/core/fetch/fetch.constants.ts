@@ -1,6 +1,6 @@
 const COMMON_HEADERS: HeadersInit = {
   Accept: 'application/json',
-  'Content-Type': 'application/json',
+  'Content-Type': 'application/json; charset=UTF-8',
 };
 
 const COMMON_CONFIG: RequestInit = {

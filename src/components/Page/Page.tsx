@@ -18,7 +18,16 @@ function Page({ title, children }: PageProps) {
       <header>
         <ul>
           <li>
-            <h1>Password policy</h1>
+            <h1>
+              <a
+                href="https://github.com/vaibhavmande/react-init"
+                title="source code"
+                target="_blank"
+                rel="noreferrer"
+              >
+                react-init
+              </a>
+            </h1>
           </li>
           <li>Environment: {TARGET_ENV}</li>
           <li>Service URL: {SERVICE_URL}</li>

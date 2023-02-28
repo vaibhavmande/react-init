@@ -15,8 +15,8 @@ function MainContent() {
   return (
     <>
       <p>Welcome, {username}</p>
-      <AppInfoCard />
       <UserInfoCard userInfo={userInfo} />
+      <AppInfoCard />
     </>
   );
 }

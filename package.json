@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "setup react app from scratch",
   "scripts": {
-    "dev:live": "webpack server --mode=development --env TARGET_ENV=development SERVICE_URL=",
+    "dev:live": "webpack server --mode=development --env TARGET_ENV=development SERVICE_URL=https://jsonplaceholder.typicode.com",
     "build": "webpack --mode=production",
     "build:production": "webpack --mode=production --progress",
     "build:dev": "webpack --mode=development --progress",

@@ -1,18 +1,16 @@
 import React, { useCallback, useId, useState } from 'react';
+import { useErrorHandler } from 'react-error-boundary';
 import FileChunkReader from '@/file-reader/FileChunkReader';
 import useAsync from '@/hooks/useAsync';
 import { homePageApi } from '@/home/api/homePageApi';
-import { requestPayload } from '@/home/api/submitPayload';
 
 function FileSelector() {
   const inputId = useId();
-  const [reqPayload] = useState<Record<string, unknown>>(requestPayload);
   const [payload, setPayload] = useState<string[]>([]);
 
-  const { status, execute, error } = useAsync<string, string>(
-    homePageApi.sendPayload(reqPayload),
-    false
-  );
+  const handlerError = useErrorHandler();
+
+  const { status, execute, error } = useAsync<string>(homePageApi.sendPayload(payload), false);
 
   const errorMessage = error instanceof Error ? error.message : error;
 
@@ -30,7 +28,7 @@ function FileSelector() {
               setPayload((payload) => [...payload, ...value]);
             }
           })
-          .catch((err) => console.error(err));
+          .catch((error) => handlerError(error));
       }
     }
   }, []);
