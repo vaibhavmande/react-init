@@ -1,0 +1,10 @@
+input[type="file"] {
+  padding-inline: 0;
+  padding-block: 0.1rem;
+}
+.file-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: flex-start;
+}
